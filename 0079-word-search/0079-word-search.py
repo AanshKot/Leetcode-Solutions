@@ -40,7 +40,7 @@ class Solution(object):
 
             return res
 
-  
+        # check every possible entry in the board
         for r in range(rows):
             for c in range(cols):
                 if dfs(r,c, 0): return True
