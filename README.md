@@ -15,6 +15,7 @@
 | [0046-permutations](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0046-permutations) |
 | [0079-word-search](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0079-word-search) |
 | [0090-subsets-ii](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0090-subsets-ii) |
+| [0131-palindrome-partitioning](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0131-palindrome-partitioning) |
 ## Bit Manipulation
 |  |
 | ------- |
@@ -23,6 +24,7 @@
 |  |
 | ------- |
 | [0079-word-search](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0079-word-search) |
+| [0131-palindrome-partitioning](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0131-palindrome-partitioning) |
 ## Depth-First Search
 |  |
 | ------- |
@@ -31,4 +33,8 @@
 |  |
 | ------- |
 | [0079-word-search](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0079-word-search) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0131-palindrome-partitioning](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0131-palindrome-partitioning) |
 <!---LeetCode Topics End-->
