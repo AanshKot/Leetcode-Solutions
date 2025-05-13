@@ -6,30 +6,30 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         
+
         res = []
-        
+
         candidates.sort()
 
-        def dfs(i,cur, total):
-            #if hit target value with subset of integers cur
-            if total == target:
-                res.append(list(cur))
+        def dfs(i, subset, curSum):
+            if curSum == target:
+                res.append(list(subset))
+                return
+            if(i >= len(candidates) or curSum > target):
                 return
 
-            #sum of integers in the subset is greater than target or reached end of candidates
-            if i >= len(candidates) or total > target:
-                return
-            
-            #this check is the left decision: including the number in our subset
-            cur.append(candidates[i])
-            #cannot reuse candidates at index i
-            dfs(i + 1, cur, total + candidates[i])
+            #left decision and move on
+            subset.append(candidates[i])
+            dfs(i + 1, subset, curSum + candidates[i])
 
-            #this check is our right decision: choosing to skip over candidates[i] to the subsets not including candidates[i]
-            cur.pop()
-            while i + 1 < len(candidates) and (candidates[i] == candidates[i+1]):
+            #or right decision: choose to skip over including this number and any more occurrences of this number
+            # keep our subset unique
+            subset.pop()
+
+            while i + 1  < len(candidates) and candidates[i] == candidates[i+1]:
                 i += 1
-            dfs(i+1, cur, total)
+            dfs(i + 1, subset, curSum)
         
         dfs(0, [], 0)
+
         return res
