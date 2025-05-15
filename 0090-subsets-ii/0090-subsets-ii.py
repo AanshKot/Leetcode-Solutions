@@ -9,24 +9,21 @@ class Solution(object):
 
         nums.sort()
 
-        def dfs(i, cur):
+        def dfs(i, curSub):
             if i >= len(nums):
-                #appending copy because don't want to append direct reference to list
-                res.append(list(cur))
+                res.append(list(curSub))
                 return
             
-            #left decision (choosing to include number)
-            cur.append(nums[i])
-            dfs(i+1, cur)
+            #left decision choose to include the number
+            curSub.append(nums[i])
+            dfs(i + 1, curSub)
 
-            #right decision (choosing to skip the number and every instance of its duplicate in the subset)
-            cur.pop()
-
-            while i < len(nums) - 1 and nums[i] == nums[i+1]:
+            curSub.pop()
+            while i + 1 < len(nums) and nums[i] == nums[i+1]:
                 i += 1
 
-            dfs(i+1, cur)
+            dfs(i + 1, curSub)
 
-        dfs(0,[])
+        dfs(0, [])
+        return res
 
-        return res 
