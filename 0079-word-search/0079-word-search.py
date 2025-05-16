@@ -5,43 +5,37 @@ class Solution(object):
         :type word: str
         :rtype: bool
         """
-        
-        rows = len(board) 
-        cols = len(board[0]) 
-        
-        path = set()
 
-        def dfs(r, c, i):
-            # i is the current character in our target word, if i ever reaches the last position of the word we found the word
-            if i == len(word):
+        visited = set()
+        rows = len(board)
+        cols = len(board[0])
+        
+        def dfs(i, r, c):
+            # our pointer has reached the end of the word, traveled full word, it exists in board
+            if i >= len(word):
                 return True
 
-            # what if we go out of bounds bounds up: (r < 0),  down: (r >= rows), left: c < 0, right: c >= cols
-            # word[i] != board[r][c] current tile doesn't match word at index i
-            # if we already visited (r,c)
-            if (r < 0 or c < 0 or 
-            r >= rows or c >= cols 
-            or word[i] != board[r][c] or 
-            (r,c) in path ):
+            
+            if (r < 0 or r >= len(board) or c < 0 or c >= len(board[0]) # reached boundary conditions
+                or (r, c) in visited  # if our current tile has already been visited
+                or board[r][c] != word[i]):  # if the tile doesn't match where we are currently at in the word
                 return False
 
-            path.add((r,c))
-
-            res = (
-                dfs(r + 1, c, i + 1) or
-                dfs(r - 1, c, i + 1) or
-                dfs(r, c + 1, i + 1) or
-                dfs(r, c - 1, i + 1)
-            )
+            visited.add((r, c))
+            res =  (dfs(i + 1, r - 1, c)  # up  
+                    or dfs(i + 1, r + 1, c)  # down 
+                    or dfs(i + 1, r, c - 1)  # left
+                    or dfs(i + 1, r, c + 1))  # right
 
             #cleanup
-            # returning from function call therefore no longer visiting tile in our path
-            path.remove((r,c))
-
+            #returning from function call therenofe no longer visiting tile in our path
+            visited.remove((r,c))
+            
             return res
 
-        # check every possible entry in the board
+        #have to do check for every entry in board
         for r in range(rows):
             for c in range(cols):
-                if dfs(r,c, 0): return True
+                if (dfs(0,r,c)): return True
+
         return False
