@@ -7,26 +7,30 @@ class Solution(object):
 
         res = []
 
-        subset = []
+        substring = []
 
         def dfs(i):
+            #the index i will be traversing through our string
             if i >= len(s):
-                res.append(list(subset))
-                return 
-
+                res.append(list(substring))
+                return
+            
             for j in range(i, len(s)):
                 if self.isPalindrome(s, i, j):
-                    subset.append(s[i: j + 1])
-                    dfs(j + 1)
-
-                    subset.pop()
+                    substring.append(s[i:j+1]) #substring is a palindrome append it to out list
+                    dfs(j + 1) #dfs looking for additional partitions 
+                    substring.pop()
         dfs(0)
+
         return res
 
-    def isPalindrome(self, s, low, high):
-        while low < high:
-            if s[low] != s[high]:
+    
+    def isPalindrome(self, substring, i, j):
+        while i < j:
+            if substring[i] != substring[j]:
                 return False
-            low += 1
-            high -= 1
+
+            i += 1
+            j -= 1
+
         return True
