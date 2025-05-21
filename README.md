@@ -45,10 +45,12 @@
 ## Linked List
 |  |
 | ------- |
+| [0019-remove-nth-node-from-end-of-list](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0019-remove-nth-node-from-end-of-list) |
 | [0143-reorder-list](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0143-reorder-list) |
 ## Two Pointers
 |  |
 | ------- |
+| [0019-remove-nth-node-from-end-of-list](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0019-remove-nth-node-from-end-of-list) |
 | [0143-reorder-list](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0143-reorder-list) |
 ## Stack
 |  |
