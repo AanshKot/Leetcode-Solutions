@@ -46,6 +46,7 @@
 |  |
 | ------- |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0019-remove-nth-node-from-end-of-list) |
+| [0138-copy-list-with-random-pointer](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0138-copy-list-with-random-pointer) |
 | [0143-reorder-list](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0143-reorder-list) |
 ## Two Pointers
 |  |
@@ -60,4 +61,8 @@
 |  |
 | ------- |
 | [0143-reorder-list](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0143-reorder-list) |
+## Hash Table
+|  |
+| ------- |
+| [0138-copy-list-with-random-pointer](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0138-copy-list-with-random-pointer) |
 <!---LeetCode Topics End-->
