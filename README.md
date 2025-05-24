@@ -10,6 +10,7 @@
 | [0078-subsets](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0078-subsets) |
 | [0079-word-search](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0079-word-search) |
 | [0090-subsets-ii](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0090-subsets-ii) |
+| [0287-find-the-duplicate-number](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0287-find-the-duplicate-number) |
 ## Backtracking
 |  |
 | ------- |
@@ -25,6 +26,7 @@
 | ------- |
 | [0078-subsets](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0078-subsets) |
 | [0090-subsets-ii](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0090-subsets-ii) |
+| [0287-find-the-duplicate-number](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0287-find-the-duplicate-number) |
 ## String
 |  |
 | ------- |
@@ -54,6 +56,7 @@
 | ------- |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0019-remove-nth-node-from-end-of-list) |
 | [0143-reorder-list](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0143-reorder-list) |
+| [0287-find-the-duplicate-number](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0287-find-the-duplicate-number) |
 ## Stack
 |  |
 | ------- |
@@ -71,4 +74,8 @@
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0002-add-two-numbers) |
+## Binary Search
+|  |
+| ------- |
+| [0287-find-the-duplicate-number](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0287-find-the-duplicate-number) |
 <!---LeetCode Topics End-->
