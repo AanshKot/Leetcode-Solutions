@@ -16,7 +16,7 @@ class Solution(object):
             if slow == fast:
                 break
         
-        #start point to beginning of cycle
+        #start point to beginning of cycle, advance point to original point where slow and fast intersect (slow)
         slow2 = 0
         while True:
             slow = nums[slow]
