@@ -11,19 +11,17 @@ class Solution(object):
         :rtype: Optional[ListNode]
         """
         dummy = ListNode(0, head)
-        left = dummy
-        right = head
+        slow = dummy
+        fast = head
 
-        # Move right n steps ahead
         for _ in range(n):
-            right = right.next
-
-        # Move both pointers until right reaches the end
-        while right:
-            left = left.next
-            right = right.next
-
-        # Remove the node
-        left.next = left.next.next
+            fast = fast.next
+        
+        while fast:
+            fast = fast.next
+            slow =  slow.next
+        
+        
+        slow.next = slow.next.next
 
         return dummy.next
