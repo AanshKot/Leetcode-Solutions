@@ -13,35 +13,34 @@ class Solution(object):
         :type head: Node
         :rtype: Node
         """
-        oldToCopy = { None: None } #base case where recieved node to be copied is None
 
-        #first pass
+        oldToCopy = {None:None}
+
         cur = head
 
+        #first pass 
         while cur:
-            #1. copy the node to a new node
-            #2. update the hashmap to map the old node to the copied
-            #3. now the old node maps to the deep copied node 
-            copiedNode = Node(cur.val)
-            oldToCopy[cur] = copiedNode
+            #1. create the copied node
+            copy = Node(cur.val)
+
+            #2. map the cur node to the copy
+            oldToCopy[cur] = copy
+
+            #3. iterate current
             cur = cur.next
+
+        #second pass, connect the nodes
+        listRunner = head
+        while listRunner:
+            #get the copied node
+            copy = oldToCopy[listRunner]
+
+            #set the next pointer to the next node
+                #how do we do this? we check the hashmap for key listRunner.next as the value has the copied node
+            copy.next = oldToCopy[listRunner.next]
+            copy.random = oldToCopy[listRunner.random]
+
+            listRunner = listRunner.next
         
-        #second pass
-            
-        #the old node's pointers act as the key for the values stored in the copied node
-        cur = head
-
-        while cur:
-            #1. copy.next = oldToCopy[cur.next]
-            #2. copy.random = oldToCopy[cur.random]
-
-            #retrieve the copied node
-            copy = oldToCopy[cur]
-            copy.next = oldToCopy[cur.next]
-            copy.random = oldToCopy[cur.random]
-            cur = cur.next
-
-        return oldToCopy[head] #head is an old node, there exists a copy of it
-
-
+        return oldToCopy[head]
 
