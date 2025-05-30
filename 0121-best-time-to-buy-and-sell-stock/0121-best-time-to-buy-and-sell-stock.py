@@ -18,7 +18,7 @@ class Solution(object):
                 #keep left pointer at the same day
 
             elif(prices[left] >= prices[right]):
-                left = right
+                left = right #move left pointer to new minimum
             
             right += 1
         
