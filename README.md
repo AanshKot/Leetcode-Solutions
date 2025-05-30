@@ -10,6 +10,7 @@
 | [0078-subsets](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0078-subsets) |
 | [0079-word-search](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0079-word-search) |
 | [0090-subsets-ii](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0090-subsets-ii) |
+| [0121-best-time-to-buy-and-sell-stock](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0287-find-the-duplicate-number](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0287-find-the-duplicate-number) |
 ## Backtracking
 |  |
@@ -43,6 +44,7 @@
 ## Dynamic Programming
 |  |
 | ------- |
+| [0121-best-time-to-buy-and-sell-stock](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0131-palindrome-partitioning](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0131-palindrome-partitioning) |
 ## Linked List
 |  |
