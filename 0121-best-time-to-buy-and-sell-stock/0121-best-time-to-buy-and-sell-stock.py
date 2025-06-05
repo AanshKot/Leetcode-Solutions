@@ -5,24 +5,20 @@ class Solution(object):
         :rtype: int
         """
 
-        if len(prices) == 1:
-            return 0
+        l = 0
+        profit = 0
 
-        maxProfit = 0
-        left = 0
-        right = 1
-
-        while right < len(prices):
-            if(prices[left] < prices[right]): #if price on earlier day is less than price in future
-                maxProfit = max(maxProfit, prices[right] - prices[left])
-                #keep left pointer at the same day
-
-            elif(prices[left] >= prices[right]):
-                left = right #move left pointer to new minimum
+        for r in range(len(prices)):
+            if(prices[l] >= prices[r]):
+                l = r
             
-            right += 1
-        
-        return maxProfit
+            else:
+                potentialProfit = prices[r] - prices[l]
+                profit = max(profit, potentialProfit)
+            
+           
+
+        return profit
 
 
             
