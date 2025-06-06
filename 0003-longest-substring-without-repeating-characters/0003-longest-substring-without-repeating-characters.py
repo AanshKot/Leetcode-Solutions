@@ -6,19 +6,21 @@ class Solution(object):
         """
         maxRes = 0
         l = 0
-        charSet = set()
-        #our window will only contain substring with unique characters
 
+        setChars = set()
         for r in range(len(s)):
 
-            #if char at r is a duplicate
-            while s[r] in charSet:
-                #move the start of the window till it no longer contains duplicate elements
-                charSet.remove(s[l])
+            while s[r] in setChars:
+                #1. remove s[l] from the setChars
+                #2. increment l
+
+                setChars.remove(s[l])
                 l += 1
-            
-            #if char at r is not a duplicate
-            charSet.add(s[r]) #add it to the set of already seen characters
-            maxRes = max(maxRes,len(charSet)) #compare the result with maxRes
+
+            setChars.add(s[r])
+
+            #compare our maximum
+            #the length of the window is r - l + 1
+            maxRes = max(maxRes, r - l + 1)
 
         return maxRes
