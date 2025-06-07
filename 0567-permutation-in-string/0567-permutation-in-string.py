@@ -5,30 +5,37 @@ class Solution(object):
         :type s2: str
         :rtype: bool
         """
-        if len(s1) > len(s2): #edge case if len s1 greater than len s2 then no substring of s2 cannot be a permutation of s1
-            return False
+        
+        #1. create freq map for s1
+        freqMap = {}
+        for i in s1:
+            freqMap[i] = 1 + freqMap.get(i,0)
+        
 
-        # Build the frequency map for s1
-        s1Hash = {}
-        for char in s1:
-            s1Hash[char] = s1Hash.get(char, 0) + 1
+        #when is the window valid?
+        #the window/substring is valid when its the length of s1? r - l + 1 == len(s1)
+        
+        #what to do when window is invalid?
+        #decrement the left pointer's character freq (delete it if no more occurences) move the left pointer to the right by 1
 
-        # Initialize the sliding window
-        windowHash = {}
         l = 0
-        for r in range(len(s2)):
-            # Add current character to window
-            windowHash[s2[r]] = windowHash.get(s2[r], 0) + 1
 
-            # Keep window size equal to len(s1)
-            if r - l + 1 > len(s1):
-                windowHash[s2[l]] -= 1
-                if windowHash[s2[l]] == 0:
-                    del windowHash[s2[l]]
+        #freqMap for substring to compare to the original freqMap (just like anagrams)
+        freqMap2 = {}
+        for r in range(len(s2)):
+            freqMap2[s2[r]] = 1 +  freqMap2.get(s2[r],0)
+
+            while r - l + 1 > len(s1):
+                freqMap2[s2[l]] = freqMap2.get(s2[l]) - 1
+                
+                if(freqMap2[s2[l]] == 0): #if there are no more occurences of the character after moving the left pointer delete it
+                    del freqMap2[s2[l]]
+
                 l += 1
 
-            # Compare the two hashmaps
-            if windowHash == s1Hash:
+            if freqMap2 == freqMap: 
                 return True
 
         return False
+
+
