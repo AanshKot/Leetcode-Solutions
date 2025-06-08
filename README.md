@@ -40,6 +40,7 @@
 |  |
 | ------- |
 | [0079-word-search](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0079-word-search) |
+| [0226-invert-binary-tree](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0226-invert-binary-tree) |
 ## Matrix
 |  |
 | ------- |
@@ -93,4 +94,16 @@
 | [0003-longest-substring-without-repeating-characters](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0424-longest-repeating-character-replacement](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0424-longest-repeating-character-replacement) |
 | [0567-permutation-in-string](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0567-permutation-in-string) |
+## Tree
+|  |
+| ------- |
+| [0226-invert-binary-tree](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0226-invert-binary-tree) |
+## Breadth-First Search
+|  |
+| ------- |
+| [0226-invert-binary-tree](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0226-invert-binary-tree) |
+## Binary Tree
+|  |
+| ------- |
+| [0226-invert-binary-tree](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0226-invert-binary-tree) |
 <!---LeetCode Topics End-->
