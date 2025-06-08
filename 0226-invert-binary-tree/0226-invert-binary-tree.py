@@ -15,8 +15,11 @@ class Solution(object):
 
             root.right = root.left
             root.left = temp
+            
+            #do this for the root's left and right children
             self.invertTree(root.left)
             self.invertTree(root.right)
+
             return root
         return
         
