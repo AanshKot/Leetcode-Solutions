@@ -10,10 +10,8 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: int
         """
-        
-        def dfs(root):
-            if root:
-                return 1 + max(dfs(root.left), dfs(root.right)) # 1 is the current root, do this for every subtree, return the max between the left and right subtrees
-            return 0
-        
-        return dfs(root)
+        # 1 is the current root, do this for every subtree, return the max between the left and right subtrees
+        if root:
+            return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+
+        return 0
