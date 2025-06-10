@@ -10,7 +10,7 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: int
         """
-        # 1 is the current root, do this for every subtree, return the max between the left and right subtrees
+        # '1' is the current root, do this for every subtree, return the max between the left and right subtrees
         if root:
             return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
 
