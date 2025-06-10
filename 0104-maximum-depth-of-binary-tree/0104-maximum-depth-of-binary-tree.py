@@ -13,7 +13,7 @@ class Solution(object):
         
         def dfs(root):
             if root:
-                return 1 + max(dfs(root.left), dfs(root.right))
+                return 1 + max(dfs(root.left), dfs(root.right)) # 1 is the current root, do this for every subtree, return the max between the left and right subtrees
             return 0
         
         return dfs(root)
