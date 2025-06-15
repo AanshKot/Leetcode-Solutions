@@ -21,5 +21,7 @@ class Solution(object):
             elif p.val > cur.val and q.val > cur.val:
                 cur = cur.right
             else:
-                return cur
+                #since its a BST
+                #cur is guaranteed to be the LCA of p and q as its value is in between or equivalent (in the case the node is an ancestor of itself)
+                return cur 
 
