@@ -7,32 +7,33 @@
 class Solution(object):
     def levelOrder(self, root):
         """
-        :type root: Optional[TreeNode]
+        :type root: TreeNode
         :rtype: List[List[int]]
         """
-        if not root:
-            return []
 
+        if root == None:
+            return []
+        
         levels = []
 
         q = deque()
 
         q.append(root)
 
-        while len(q) > 0:
-            #1. get the length of the queue this will represent the current length of our level
-            lengthLevel = len(q)
-            level = [] #represents the node values in the level
-            
-            for i in range(lengthLevel):
+        while q:
+            level = []
+
+            for i in range(len(q)):
+
                 node = q.popleft()
                 level.append(node.val)
+
                 if node.left:
                     q.append(node.left)
+                
                 if node.right:
                     q.append(node.right)
-
             levels.append(level)
 
         return levels
-
+        
