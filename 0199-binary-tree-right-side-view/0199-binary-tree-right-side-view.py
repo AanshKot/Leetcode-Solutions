@@ -32,7 +32,7 @@ class Solution:
                     q.append(node.left)
                 if node.right:
                     q.append(node.right)
-            #the rightmost element is 
+                    
             rightmostNodeVals.append(level[-1])
 
         return rightmostNodeVals
