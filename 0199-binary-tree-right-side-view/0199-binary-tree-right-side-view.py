@@ -9,6 +9,12 @@ class Solution:
         if not root:
             return []
         
+        #1. BFS (level order traversal)
+        #2. append the rightmost element in the level to the res
+            #a. the last element in the level is guaranteed to be the rightmost element in the tree
+                #this is due to the fact that the level order traversal starts from the leftmost node and 
+                #goes to the rightmost existing node
+
         q = deque()
         q.append(root)
         
@@ -26,7 +32,7 @@ class Solution:
                     q.append(node.left)
                 if node.right:
                     q.append(node.right)
-            
+            #the rightmost element is 
             rightmostNodeVals.append(level[-1])
 
         return rightmostNodeVals
