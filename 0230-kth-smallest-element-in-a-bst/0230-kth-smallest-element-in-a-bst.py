@@ -8,6 +8,9 @@ class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         orderedArr = []
 
+        # traverse the tree in order left -> root -> right
+        # append node vals to a orderedArr result
+        # return the k - 1 (since k is 1 indexed) element
         def inOrderTraversal(root):
             if root:
                 inOrderTraversal(root.left)
