@@ -14,8 +14,8 @@ class Solution:
         if(self.isSameTree(root,subRoot)):
             return True
         
-        leftSubtree = self.isSameTree(root.left, subRoot)
-        rightSubtree = self.isSameTree(root.right, subRoot)
+        leftSubtree = self.isSubtree(root.left, subRoot)
+        rightSubtree = self.isSubtree(root.right, subRoot)
 
         return leftSubtree or rightSubtree
 
