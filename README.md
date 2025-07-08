@@ -14,6 +14,7 @@
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0200-number-of-islands](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0200-number-of-islands) |
 | [0287-find-the-duplicate-number](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0287-find-the-duplicate-number) |
+| [0695-max-area-of-island](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0695-max-area-of-island) |
 ## Backtracking
 |  |
 | ------- |
@@ -53,12 +54,14 @@
 | [0235-lowest-common-ancestor-of-a-binary-search-tree](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0235-lowest-common-ancestor-of-a-binary-search-tree) |
 | [0543-diameter-of-binary-tree](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0543-diameter-of-binary-tree) |
 | [0572-subtree-of-another-tree](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0572-subtree-of-another-tree) |
+| [0695-max-area-of-island](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0695-max-area-of-island) |
 | [1544-count-good-nodes-in-binary-tree](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1544-count-good-nodes-in-binary-tree) |
 ## Matrix
 |  |
 | ------- |
 | [0079-word-search](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0079-word-search) |
 | [0200-number-of-islands](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0200-number-of-islands) |
+| [0695-max-area-of-island](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0695-max-area-of-island) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -134,6 +137,7 @@
 | [0199-binary-tree-right-side-view](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0199-binary-tree-right-side-view) |
 | [0200-number-of-islands](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0200-number-of-islands) |
 | [0226-invert-binary-tree](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0226-invert-binary-tree) |
+| [0695-max-area-of-island](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0695-max-area-of-island) |
 | [1544-count-good-nodes-in-binary-tree](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1544-count-good-nodes-in-binary-tree) |
 ## Binary Tree
 |  |
@@ -173,4 +177,5 @@
 |  |
 | ------- |
 | [0200-number-of-islands](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0200-number-of-islands) |
+| [0695-max-area-of-island](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0695-max-area-of-island) |
 <!---LeetCode Topics End-->
