@@ -29,6 +29,7 @@ class Solution:
             for neighbour in node.neighbors:
                 #dfs responsible for creating the clone
                 #dfs also responsible for creating the copied neighbours 
+                # dfs on the neighbours in order to 1. get the cloned neighbour and 2. get the neighbours of the neighbours
                 clone.neighbors.append(dfs(neighbour))
             
             return clone
