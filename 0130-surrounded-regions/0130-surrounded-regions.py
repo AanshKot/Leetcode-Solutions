@@ -30,7 +30,6 @@ class Solution:
             if board[maxRows-1][col] =='O' and (maxRows-1, col) not in visited:
                 visited.add((maxRows-1,col))
                 q.append((maxRows-1, col))
-        print(q)
 
         # start BFS from all our 0s 
         while q:
@@ -54,13 +53,11 @@ class Solution:
                         q.append((newRow, newCol))
                         visited.add((newRow, newCol))
 
-        print(visited)
 
         # visited reps all the O nodes reachable from a border O node
         for r in range(maxRows):
             for c in range(maxCols):
                 if board[r][c] == "O" and (r,c) not in visited:
-                    print('hitting this condition')
                     board[r][c] = "X"
                 
             
