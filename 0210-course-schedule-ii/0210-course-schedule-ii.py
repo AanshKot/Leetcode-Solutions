@@ -14,7 +14,8 @@ class Solution:
         visited = set()
         # represents the set of nodes whose neighbours we have traveled and already seen
         # this set is for constructing our course schedule
-        seen = []
+        seen = set()
+        courseOrder = []
         def dfs(course):
             #cyclic graph
             if course in visited:
@@ -24,7 +25,8 @@ class Solution:
     
             #course has no prereqs
             if adjList[course] == []:
-                seen.append(course)
+                courseOrder.append(course)
+                seen.add(course)
                 return True
 
             visited.add(course)
@@ -38,7 +40,8 @@ class Solution:
             #in other words this course can be the prereq of another
             visited.remove(course)
             #traversed this course completely and completed its pre reqs
-            seen.append(course) 
+            seen.add(course) 
+            courseOrder.append(course)
             # already checked course can now set its pre reqs to none/empty
             adjList[course] = []
             return True
@@ -47,6 +50,6 @@ class Solution:
             if not dfs(course):
                 return []
 
-        return seen
+        return courseOrder
             
 
