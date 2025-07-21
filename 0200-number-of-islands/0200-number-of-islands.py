@@ -41,6 +41,9 @@ class Solution:
                         (newRow,newCol) not in visited and 
                         grid[newRow][newCol] == "1"
                     ):
+                        # because I didn't add the (newRow, newCol) to the visited set after queuing it
+                        # it could be added multiple times to the queue
+                        # increasing the time taken for BFS to complete
                         visited.add((newRow, newCol))
                         q.append((newRow,newCol))
 
