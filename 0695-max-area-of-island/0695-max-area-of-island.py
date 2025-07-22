@@ -1,47 +1,47 @@
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
 
-
-        # background
-        visited = set()
+        # constants
         maxRows = len(grid)
         maxCols = len(grid[0])
-        maxArea = 0
-        directions = [[-1,0], [1,0], [0, -1], [0, 1]]
-
-        def dfs(tileX, tileY):
-            # base case
-            if grid[tileX][tileY] == 0 or (tileX, tileY) in visited:
-                return 0 
-
-            #add current tile to visited set
-            visited.add((tileX, tileY))
-            area = 1
-
-            # dfs for every tile in every possible direction
-            # only dfs IF the following conditions are met
-            # 1. tile within bounds
-            # 2. if the tile is a water tile
-            
-            for direct in directions:
-                newTileX = tileX + direct[0]
-                newTileY = tileY + direct[1]
-
-                if(
-                    newTileX in range(maxRows) and
-                    newTileY in range(maxCols) and
-                    grid[newTileX][newTileY] == 1
-                ):
-                    area += dfs(newTileX, newTileY)
-
-            return area
+        directions = [[-1,0], [1,0], [0,-1], [0,1]]
         
-        for x in range(maxRows):
-            for y in range(maxCols):
-                if grid[x][y] == 1 and (x,y) not in visited:
-                    maxArea = max(maxArea, dfs(x,y))
+        # visited set
+        visited = set()
 
+        maxArea = 0
+
+        def dfs(landTileRow, landTileCol):
+            area = 1
+            #explore the tiles neighbours
+            for direct in directions:
+                dR = direct[0]
+                dC = direct[1]
+
+                newRow = landTileRow + dR
+                newCol = landTileCol + dC
+
+                if (
+                    newRow in range(maxRows) and 
+                    newCol in range(maxCols) and 
+                    (newRow, newCol) not in visited and
+                    grid[newRow][newCol] == 1
+                ):
+                    visited.add((newRow,newCol))
+                    area += dfs(newRow, newCol)
+            
+            return area
+
+        
+
+        for row in range(maxRows):
+            for col in range(maxCols):
+                if grid[row][col] == 1 and (row,col) not in visited:
+                    visited.add((row,col))
+                    maxArea = max(maxArea, dfs(row,col))
+        
         return maxArea
+
 
 
         
