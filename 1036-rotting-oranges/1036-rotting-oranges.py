@@ -1,55 +1,68 @@
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
-        q = deque()
-        time = 0
-        freshOranges = 0
-
+        # constants
         maxRows = len(grid)
         maxCols = len(grid[0])
-        # up down left right
-        directions = [[-1,0],[1,0],[0,-1],[0,1]]
+        directions = [[-1,0], [1,0], [0, -1], [0,1]]
 
-        # background
-        # count number of fresh oranges
-        # append rotten oranges to bfs
 
-        for r in range(maxRows):
-            for c in range(maxCols):
-                if grid[r][c] == 1:
-                    freshOranges += 1
+        # BFS
+        q = deque()
+        numRipeOranges = 0
+        visited = set() # this set stores the positions that have already been traversed
 
-                if grid[r][c] == 2:
-                    q.append((r,c))
-        
-        while q and freshOranges > 0:
-            curLevelLength = len(q)
-            # pop rotten oranges at the same time
-            for i in range(curLevelLength):
-                rowRotten, colRotten = q.popleft()
+        # first pass
+        for row in range(maxRows):
+            for col in range(maxCols):
+                if grid[row][col] == 1:
+                    numRipeOranges += 1
+                
+                elif grid[row][col] == 2:
+                    q.append((row,col))
+                    visited.add((row, col))
 
-                for direct in directions:
-                    newRow = rowRotten + direct[0]
-                    newCol = colRotten + direct[1]
+        if numRipeOranges == 0:
+            return 0
 
-                    #if fresh orange and in bounds
-                    # infect the orange
-                    # pass it to the queue
+        # result
+        minTime = -1
+
+        # second pass is our actual BFS
+        while q:
+            lengthLevel = len(q)
+            print(q)
+            for i in range(lengthLevel):
+                rotOrangeRow, rotOrangeCol = q.popleft()
+            
+                #from this rotting orange we want to see what ripe oranges we can infect
+                for dRow, dCol in directions:
+                    newRow, newCol = rotOrangeRow + dRow, rotOrangeCol + dCol
+
                     if(
-                        newRow in range(maxRows) and
+                        newRow in range(maxRows) and 
                         newCol in range(maxCols) and
+                        (newRow, newCol) not in visited and
                         grid[newRow][newCol] == 1
                     ):
                         grid[newRow][newCol] = 2
-                        q.append((newRow, newCol))
-                        freshOranges -= 1
-    
-            # after traversing level and simulateously infecting fresh oranges from infected oranges
-            time += 1
+                        q.append((newRow,newCol))
+                        # add to visited set as we have reached it from a rotting orange and don't want other rotting oranges to traverse on an already infected ripe orange
+                        visited.add((newRow,newCol))
+                        numRipeOranges -= 1
+                
+            minTime += 1 # a level represents the rotting oranges infected at time t 
 
-        #if no fresh oranges successfully infected entire grid
-        if freshOranges == 0: 
-            return time
+        if numRipeOranges > 0:
+            #infection failed
+            return -1
         
-        return -1
+        return minTime
 
 
+
+
+        
+
+
+
+        
