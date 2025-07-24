@@ -25,19 +25,19 @@ class Solution:
             return 0
 
         # result
-        minTime = -1
+        minTime = 0
 
         # second pass is our actual BFS
-        while q:
+        while q and numRipeOranges > 0:
             lengthLevel = len(q)
             print(q)
             for i in range(lengthLevel):
                 rotOrangeRow, rotOrangeCol = q.popleft()
-            
+                visited.add((rotOrangeRow, rotOrangeCol))
                 #from this rotting orange we want to see what ripe oranges we can infect
                 for dRow, dCol in directions:
                     newRow, newCol = rotOrangeRow + dRow, rotOrangeCol + dCol
-
+                    
                     if(
                         newRow in range(maxRows) and 
                         newCol in range(maxCols) and
