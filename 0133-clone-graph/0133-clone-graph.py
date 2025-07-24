@@ -9,33 +9,30 @@ class Node:
 from typing import Optional
 class Solution:
     def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
-
-        cloneHash = {}
-
+        cloneHash = {} #original node to copied node
         if not node:
             return None
 
+        # this dfs is responsible for 
+        # 1. if the node passed in has already been cloned
+        # 2. return the cloned node, 
         def dfs(node):
-            #the base case is that the node has already been traversed and cloned
-            #in this case we want to return the copied node
-            # return the copied node
+            # original nodes are passed in each time we append a neighbour since we call cloneHash.append(originalNeighbourNode)
+            # as such we will never be returning a copy in this scenario because the reference to the original node will never match the reference to a copy node
+
             if node in cloneHash:
-                return cloneHash[node]
+                return cloneHash[node] # return the copied node
             
-            clone = Node(node.val)
-            cloneHash[node] = clone
+            #the node inputted to the DFS is an original node that hasn't been copied
+            copy = Node(node.val)
+            cloneHash[node] = copy
 
-            #iterate over the original node's neighbours preform dfs over them to get the copied neighbour node not the original neighbour node 
             for neighbour in node.neighbors:
-                #dfs responsible for creating the clone
-                #dfs also responsible for creating the copied neighbours 
-                # dfs on the neighbours in order to 1. get the cloned neighbour and 2. get the neighbours of the neighbours
-                clone.neighbors.append(dfs(neighbour))
+                cloneHash[node].neighbors.append(dfs(neighbour))
             
-            return clone
+            return copy
 
-
-        return dfs(node)
-           
-
+        copiedGraph = dfs(node)
+        return copiedGraph
+        
         
