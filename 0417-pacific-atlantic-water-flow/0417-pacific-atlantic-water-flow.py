@@ -1,50 +1,54 @@
 class Solution:
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
-        #background
-        directions = [[1,0],[-1,0],[0,1],[0,-1]] #down up right left
+        res = []
+        # define constants
         maxRows = len(heights)
         maxCols = len(heights[0])
-        res = []
-        pac = set()
-        atl = set()    
+        directions = [[-1,0], [1,0], [0,-1], [0,1]]
 
-        def dfs(r, c, visit, prevHeight):
+        pacificSet = set()
+        atlanticSet = set()
+        
+        # traverse from pacific to atlantic border
+        # traverse from atlantic to pacifice border
+        #visited tiles are tiles we can reach from the pacific border and so we add it to the pacificSet
+        def dfs(tileRow, tileCol, visited, prevHeight):
+           #if the tile is in the pacific or atlantic set already no need to traverse on it
             if (
-                (r,c) in visit or
-                r not in range(maxRows) or
-                c not in range(maxCols) or 
-                heights[r][c] < prevHeight #only allowed to traverse from ocean to other ocean if tile height is greater than prevHeight
+            tileRow not in range(maxRows) or 
+            tileCol not in range(maxCols) or
+            (tileRow, tileCol) in visited or 
+            heights[tileRow][tileCol] < prevHeight # water can't flow from shorter curr tile to taller border tile
             ):
-                return
+                return 
             
-            visit.add((r,c))
+            visited.add((tileRow, tileCol))
 
             for direct in directions:
-                newRow, newCol = r + direct[0], c + direct[1]
-                dfs(newRow, newCol, visit, heights[r][c])
+                dRow = direct[0]
+                dCol = direct[1]
 
+                newTileRow = tileRow + dRow
+                newTileCol = tileCol + dCol
 
-        #first and last row
-        for c in range(maxCols):
-            #first row means the pacific ocean
-            #visit this position and see every other position it can reach
-            dfs(0,c, pac, heights[0][c])
+                dfs(newTileRow, newTileCol, visited, heights[tileRow][tileCol]) 
 
-            #last row means atlantic ocean
-            dfs(maxRows - 1, c, atl, heights[maxRows-1][c])
-
-            #first and last col 
-            for r in range(maxRows):
-                # every position in the leftmost col (PACIFIC start tiles)
-                dfs(r, 0, pac, heights[r][0])
-
-                # every position in the rightmost col (ATLANTIC start tiles)
-                dfs(r, maxCols -1, atl, heights[r][maxCols - 1])
+        for row in range(maxRows):
+            dfs(row, 0, pacificSet, heights[row][0])
+            dfs(row, maxCols - 1, atlanticSet, heights[row][maxCols-1])
         
+        for col in range(maxCols):
+            dfs(0, col, pacificSet, heights[0][col])
+            dfs(maxRows -1, col, atlanticSet, heights[maxRows-1][col])
+        
+            
 
-        for r in range(maxRows):
-            for c in range(maxCols):
-                if (r,c) in pac and (r,c) in atl:
-                    res.append([r,c])
+        # final part of the function
+        for row in range(maxRows):
+            for col in range(maxCols):
+                if (row,col) in pacificSet and (row,col) in atlanticSet:
+                    res.append([row,col])
+        
+        return res 
 
-        return res
+        
