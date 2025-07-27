@@ -13,28 +13,28 @@ class Solution:
         #dfs with visited and path
         #dfs returns False if it detects a cycle
         visited = set() #if already visited node return False cycle detected
-        def dfs(course, path):
-            if course in visited:
+        def dfs(course, visiting):
+            if course in visiting:
                 return False
-            
-            #course has no prereqs therefore no cycle
-            if adjList[course] == []:
-                return True
 
+            if course in visited:
+                return True
+           
             visited.add(course)
-            
+            visiting.add(course)
+
             for preReq in adjList[course]:
-                if not dfs(preReq, path):
+                if not dfs(preReq, visiting):
                     return False
 
             adjList[course] = [] #viable to take a course even with its prereqs
-            visited.remove(course)
+            visiting.remove(course)
             return True
 
 
         #
         for i in range(numCourses):
-            if not dfs(i, set()):
+            if not dfs(i,set()):
                 return False
         return True
 
