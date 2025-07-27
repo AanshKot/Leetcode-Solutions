@@ -1,40 +1,42 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        # create directed graph in the form of an adjacency list
-        preMap = { i:[] for i in range(numCourses) }
-        for crs, pre in prerequisites:
-            preMap[crs].append(pre)
-        print(preMap)
+        adjList = {}
 
-        visited = set()
-        def dfs(course):
-            if course in visited:
-                return False #cycle detected unable to take course schedule
+        #directed graph in the form of an adjacency list
+        for i in range(numCourses):
+            adjList[i] = []
 
-            if preMap[course] == []:
-                return True
-            
-            visited.add(course)
+        for course, preReq in prerequisites:
+            adjList[course].append(preReq)
 
-            for pre in preMap[course]:
-                if not dfs(pre):
-                    return  False
         
-            # if we exit the for loop inside dfs we know that the course is a good node without cycles
-            # we remove it from visited so other paths can successfully revisit it
-            # we can visit the node twice without it being a cycle due to it terminating multiple paths
-            visited.remove(course)
-            preMap[course] = []
+        #dfs with visited and path
+        #dfs returns False if it detects a cycle
+        visited = set() #if already visited node return False cycle detected
+        def dfs(course, path):
+            if course in visited:
+                return False
+            
+            #course has no prereqs therefore no cycle
+            if adjList[course] == []:
+                return True
 
+            visited.add(course)
+            
+            for preReq in adjList[course]:
+                if not dfs(preReq, path):
+                    return False
+
+            adjList[course] = [] #viable to take a course even with its prereqs
+            visited.remove(course)
             return True
 
-        # if we recieve a disconnected graph i.e. 1 -> 2 and 3 -> 4
-        for course in range(numCourses):
-            #if cycle detected in DFS we know we cant take this course schedule
-            if not dfs(course):
+
+        #
+        for i in range(numCourses):
+            if not dfs(i, set()):
                 return False
         return True
-
 
 
 
