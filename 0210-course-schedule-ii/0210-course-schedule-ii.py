@@ -1,55 +1,44 @@
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        #construct adjacency list
+        #rep graph as adj list
         adjList = {}
-
-        for course in range(numCourses):
-            adjList[course] = []
+        for i in range(numCourses):
+            adjList[i] = []
 
         for course, preReq in prerequisites:
-            #source node (Course) has a prereq (sink node)
             adjList[course].append(preReq)
         
-        # visited is the set of nodes we have traversed in the current  recursive call stack
+        # dfs with visiting courses representing courses in recursive call stack
+        res = []
         visited = set()
-        # represents the set of nodes whose neighbours we have traveled and already seen
-        # this set is for constructing our course schedule
-        seen = set()
-        courseOrder = []
-        def dfs(course):
-            #cyclic graph
-            if course in visited:
-                return False
-            if course in seen:
-                return True
-    
-            #course has no prereqs
-            if adjList[course] == []:
-                courseOrder.append(course)
-                seen.add(course)
-                return True
+        visiting = set()
 
-            visited.add(course)
+        def dfs(course):
+            #this means its neighbours have already been traversed
+            if course in visited:
+                return True
+            if course in visiting:
+                return False
+
+            visiting.add(course)
 
             for preReq in adjList[course]:
                 if not dfs(preReq):
                     return False
 
-            #remove course from visited we have traveled to all its neighbours and it is a clean path
-            #this node can also be the terminating node/ or a sink node in another path 
-            #in other words this course can be the prereq of another
-            visited.remove(course)
-            #traversed this course completely and completed its pre reqs
-            seen.add(course) 
-            courseOrder.append(course)
-            # already checked course can now set its pre reqs to none/empty
-            adjList[course] = []
+            res.append(course)
+            visited.add(course) #only mark course as successfully traversed if no cycle detected with neighbours
+            visiting.remove(course)
             return True
+
+
 
         for course in range(numCourses):
             if not dfs(course):
                 return []
+        return res
 
-        return courseOrder
-            
+
+
+
 
