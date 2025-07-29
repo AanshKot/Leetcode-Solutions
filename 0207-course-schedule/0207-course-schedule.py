@@ -13,9 +13,9 @@ class Solution:
         #dfs with visited and path
         #dfs returns False if it detects a cycle
         visited = set() #if already visited node return False cycle detected
-        visiting = set()
 
-        def dfs(course):
+
+        def dfs(course, visiting):
             if course in visiting:
                 return False
 
@@ -26,7 +26,7 @@ class Solution:
             visiting.add(course)
 
             for preReq in adjList[course]:
-                if not dfs(preReq):
+                if not dfs(preReq, visiting):
                     return False
 
             adjList[course] = [] #viable to take a course even with its prereqs
@@ -38,7 +38,7 @@ class Solution:
         #graph is directed, passing a new visiting set each time would mean that not aware of cycle
         # 0 -> 1 , 1 -> 0 are different bfs with a cycle
         for i in range(numCourses):
-            if not dfs(i):
+            if not dfs(i, set()):
                 return False
         return True
 
