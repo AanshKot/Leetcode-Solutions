@@ -1,4 +1,5 @@
 class KthLargest:
+
     def __init__(self, k: int, nums: List[int]):
         # minHeap with K largest integers
         self.minHeap = nums
