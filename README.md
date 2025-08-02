@@ -17,6 +17,7 @@
 | [0287-find-the-duplicate-number](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0287-find-the-duplicate-number) |
 | [0417-pacific-atlantic-water-flow](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0417-pacific-atlantic-water-flow) |
 | [0695-max-area-of-island](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0695-max-area-of-island) |
+| [1014-k-closest-points-to-origin](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1014-k-closest-points-to-origin) |
 | [1036-rotting-oranges](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1036-rotting-oranges) |
 ## Backtracking
 |  |
@@ -115,6 +116,7 @@
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0002-add-two-numbers) |
+| [1014-k-closest-points-to-origin](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1014-k-closest-points-to-origin) |
 ## Binary Search
 |  |
 | ------- |
@@ -196,6 +198,7 @@
 |  |
 | ------- |
 | [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
+| [1014-k-closest-points-to-origin](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1014-k-closest-points-to-origin) |
 ## Union Find
 |  |
 | ------- |
@@ -223,8 +226,21 @@
 |  |
 | ------- |
 | [0789-kth-largest-element-in-a-stream](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0789-kth-largest-element-in-a-stream) |
+| [1014-k-closest-points-to-origin](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1014-k-closest-points-to-origin) |
 ## Data Stream
 |  |
 | ------- |
 | [0789-kth-largest-element-in-a-stream](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0789-kth-largest-element-in-a-stream) |
+## Geometry
+|  |
+| ------- |
+| [1014-k-closest-points-to-origin](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1014-k-closest-points-to-origin) |
+## Sorting
+|  |
+| ------- |
+| [1014-k-closest-points-to-origin](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1014-k-closest-points-to-origin) |
+## Quickselect
+|  |
+| ------- |
+| [1014-k-closest-points-to-origin](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1014-k-closest-points-to-origin) |
 <!---LeetCode Topics End-->
