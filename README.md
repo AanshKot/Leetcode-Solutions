@@ -89,6 +89,7 @@
 | [0019-remove-nth-node-from-end-of-list](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0019-remove-nth-node-from-end-of-list) |
 | [0138-copy-list-with-random-pointer](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0138-copy-list-with-random-pointer) |
 | [0143-reorder-list](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0143-reorder-list) |
+| [0355-design-twitter](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0355-design-twitter) |
 ## Two Pointers
 |  |
 | ------- |
@@ -112,6 +113,7 @@
 | [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0133-clone-graph](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0133-clone-graph) |
 | [0138-copy-list-with-random-pointer](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0138-copy-list-with-random-pointer) |
+| [0355-design-twitter](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0355-design-twitter) |
 | [0424-longest-repeating-character-replacement](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0424-longest-repeating-character-replacement) |
 | [0567-permutation-in-string](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0567-permutation-in-string) |
 | [0621-task-scheduler](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0621-task-scheduler) |
@@ -225,11 +227,13 @@
 ## Design
 |  |
 | ------- |
+| [0355-design-twitter](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0355-design-twitter) |
 | [0789-kth-largest-element-in-a-stream](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0789-kth-largest-element-in-a-stream) |
 ## Heap (Priority Queue)
 |  |
 | ------- |
 | [0215-kth-largest-element-in-an-array](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0215-kth-largest-element-in-an-array) |
+| [0355-design-twitter](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0355-design-twitter) |
 | [0621-task-scheduler](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0621-task-scheduler) |
 | [0789-kth-largest-element-in-a-stream](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0789-kth-largest-element-in-a-stream) |
 | [1014-k-closest-points-to-origin](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1014-k-closest-points-to-origin) |
