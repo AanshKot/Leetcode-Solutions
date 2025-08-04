@@ -1,5 +1,7 @@
 class Twitter:
-
+    #my solution, it works but there could be improvements here especially for getNewsFeed 
+    # is there a better way than seeing all tweets then appending it to a maxHeap?
+    
     def __init__(self):
         # user adj list, representing users and their following
         # userId: [userIds] represents who the user is following
