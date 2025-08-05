@@ -1,30 +1,25 @@
 class KthLargest:
-
     def __init__(self, k: int, nums: List[int]):
-        # minHeap with K largest integers
+        #given initial set of nums
+        #storing the k largest
         self.minHeap = nums
         self.k = k
 
         heapq.heapify(self.minHeap)
 
-        #pop the elements smaller than the kth largest element
+        #if minHeap is larger than k pop off elements from min heap until heap stores the kth largest element in the original nums set
         while len(self.minHeap) > k:
             heapq.heappop(self.minHeap)
-
         
-    
+
     def add(self, val: int) -> int:
-        #add it to our min heap
         heapq.heappush(self.minHeap, val)
 
-        #our heap can be initialized with less than k elements
-        #if we add a value to the heap we don't want to pop if it has less than k elements
         if len(self.minHeap) > self.k:
             heapq.heappop(self.minHeap)
-
-        #return the min from min heap
-        return self.minHeap[0]
         
+        #return min from min heap
+        return self.minHeap[0]
 
 
 # Your KthLargest object will be instantiated and called as such:
