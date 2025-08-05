@@ -15,10 +15,12 @@ class KthLargest:
     def add(self, val: int) -> int:
         heapq.heappush(self.minHeap, val)
 
+        # min heap is initialized with less than k elements
+        # if adding the value causes the min heap to exceed k elements pop the minimum value from the min heap as its no longer the kth largest element
         if len(self.minHeap) > self.k:
             heapq.heappop(self.minHeap)
         
-        #return min from min heap
+        #return min from min heap after restricting size of min heap to be <= k
         return self.minHeap[0]
 
 
