@@ -45,6 +45,7 @@
 |  |
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0003-longest-substring-without-repeating-characters) |
+| [0005-longest-palindromic-substring](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0005-longest-palindromic-substring) |
 | [0079-word-search](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0079-word-search) |
 | [0131-palindrome-partitioning](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0131-palindrome-partitioning) |
 | [0424-longest-repeating-character-replacement](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0424-longest-repeating-character-replacement) |
@@ -84,6 +85,7 @@
 ## Dynamic Programming
 |  |
 | ------- |
+| [0005-longest-palindromic-substring](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0005-longest-palindromic-substring) |
 | [0070-climbing-stairs](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0070-climbing-stairs) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0131-palindrome-partitioning](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0131-palindrome-partitioning) |
@@ -101,6 +103,7 @@
 ## Two Pointers
 |  |
 | ------- |
+| [0005-longest-palindromic-substring](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0005-longest-palindromic-substring) |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0019-remove-nth-node-from-end-of-list) |
 | [0143-reorder-list](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0143-reorder-list) |
 | [0287-find-the-duplicate-number](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0287-find-the-duplicate-number) |
