@@ -3,7 +3,8 @@ class Solution:
         dp = [False] * (len(s) + 1)
         
         #base case: last char of s (the empty char) can always be completed by any kind of wordDict
-        # if we get to the end of the string, len(s) this represents the problem that is always solved (kind of like 0)
+        # if we get to the end of the string, len(s) this represents the problem that is always solved
+        # segmented entire string successfully (since its empty string)
         dp[len(s)] = True
 
         # iterate backwards through the string
