@@ -1,31 +1,29 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        if len(nums) == 1:
-            return nums[0]
+        if(len(nums) == 1):
+            return nums[0] # if the length of nums is 1 then we can't do the max compare because length of array is 1, so nums[1:] returns the empty array and same for nums[:len(nums) - 1]
+        
+        return max(self.houseRobber1(nums[1:]), self.houseRobber1(nums[:len(nums) - 1]))
 
-        robFirst = self.houseRobber1(nums[:len(nums) - 1])
-        robLast = self.houseRobber1(nums[1:])
-
-        return max(robFirst, robLast)
-    
     def houseRobber1(self,nums):
         memo = {}
-        def dfs(i):
-            #reached last house
-            if i >= len(nums):
+
+        def dfs(index):
+            # max profit for a given index
+            if index in memo:
+                return memo[index]
+            
+            #second base case
+            #0 profit if pass all houses
+            if index >= len(nums):
                 return 0
-            # already calculated maxProfit starting to rob from the last index
-            if i in memo: 
-                return memo[i]
 
-            robFirst = nums[i] + dfs(i + 2)
-            skipFirst = dfs(i+1)
+            robFirst = nums[index] + dfs(index + 2)
+            skipFirst = dfs(index + 1)
 
-            #max profit for ith house is max from robbing first house vs skipping robbing first house
-            maxProfit = max(robFirst, skipFirst)
+            memo[index] = max(robFirst, skipFirst)
+            return memo[index]
 
-            memo[i] = maxProfit
-
-            return memo[i]
-        
         return dfs(0)
+            
+
