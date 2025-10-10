@@ -1,14 +1,24 @@
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
-        # number of ways to make up the current amount
-        dp = [0] * (amount + 1)
-        dp[0] = 1 # 1 way to make coin 0
+        memo = {}
 
-        # to avoid permutations being counted as a valid method i.e. amount = 3, coin val = [1,2] or [2,1] iterate through the coins
-        # then figure out if there is a valid way to make up the amount with the current coin value
-        for coinVal in coins:
-            for i in range(amount + 1):
-                if i - coinVal >= 0:
-                    dp[i] += dp[i-coinVal]
+        def dp(i, remainingAmount):
+            if i > len(coins) - 1:
+                return 0
+            
+            if remainingAmount < 0:
+                #invalid combination of coins
+                return 0 
+            
+            if remainingAmount == 0:
+                return 1
+            
+            if (i, remainingAmount) in memo:
+                return memo[(i, remainingAmount)]
 
-        return dp[amount]
+            # decision
+            # choose to use the coin (can choose to reuse as well) or we can choose to skip the coin
+            memo[(i,remainingAmount)] = dp(i, remainingAmount - coins[i]) + dp(i + 1, remainingAmount)
+            return memo[(i,remainingAmount)]
+
+        return dp(0, amount)
