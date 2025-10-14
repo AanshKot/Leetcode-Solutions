@@ -7,6 +7,7 @@
 | [0039-combination-sum](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0039-combination-sum) |
 | [0040-combination-sum-ii](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0040-combination-sum-ii) |
 | [0046-permutations](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0046-permutations) |
+| [0053-maximum-subarray](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0053-maximum-subarray) |
 | [0078-subsets](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0078-subsets) |
 | [0079-word-search](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0079-word-search) |
 | [0090-subsets-ii](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0090-subsets-ii) |
@@ -100,6 +101,7 @@
 |  |
 | ------- |
 | [0005-longest-palindromic-substring](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0005-longest-palindromic-substring) |
+| [0053-maximum-subarray](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0053-maximum-subarray) |
 | [0062-unique-paths](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0062-unique-paths) |
 | [0070-climbing-stairs](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0070-climbing-stairs) |
 | [0091-decode-ways](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0091-decode-ways) |
@@ -246,6 +248,7 @@
 ## Divide and Conquer
 |  |
 | ------- |
+| [0053-maximum-subarray](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0053-maximum-subarray) |
 | [0105-construct-binary-tree-from-preorder-and-inorder-traversal](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0105-construct-binary-tree-from-preorder-and-inorder-traversal) |
 | [0215-kth-largest-element-in-an-array](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0215-kth-largest-element-in-an-array) |
 | [1014-k-closest-points-to-origin](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1014-k-closest-points-to-origin) |
