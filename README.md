@@ -34,6 +34,7 @@
 | [1014-k-closest-points-to-origin](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1014-k-closest-points-to-origin) |
 | [1036-rotting-oranges](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1036-rotting-oranges) |
 | [1127-last-stone-weight](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1127-last-stone-weight) |
+| [2026-merge-triplets-to-form-target-triplet](https://github.com/AanshKot/Leetcode-Solutions/tree/master/2026-merge-triplets-to-form-target-triplet) |
 ## Backtracking
 |  |
 | ------- |
@@ -308,6 +309,7 @@
 |  |
 | ------- |
 | [0621-task-scheduler](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0621-task-scheduler) |
+| [2026-merge-triplets-to-form-target-triplet](https://github.com/AanshKot/Leetcode-Solutions/tree/master/2026-merge-triplets-to-form-target-triplet) |
 ## Counting
 |  |
 | ------- |
