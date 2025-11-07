@@ -65,6 +65,7 @@
 | [0424-longest-repeating-character-replacement](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0424-longest-repeating-character-replacement) |
 | [0567-permutation-in-string](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0567-permutation-in-string) |
 | [0647-palindromic-substrings](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0647-palindromic-substrings) |
+| [0768-partition-labels](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0768-partition-labels) |
 | [1250-longest-common-subsequence](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1250-longest-common-subsequence) |
 ## Depth-First Search
 |  |
@@ -139,6 +140,7 @@
 | [0287-find-the-duplicate-number](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0287-find-the-duplicate-number) |
 | [0567-permutation-in-string](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0567-permutation-in-string) |
 | [0647-palindromic-substrings](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0647-palindromic-substrings) |
+| [0768-partition-labels](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0768-partition-labels) |
 ## Stack
 |  |
 | ------- |
@@ -160,6 +162,7 @@
 | [0424-longest-repeating-character-replacement](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0424-longest-repeating-character-replacement) |
 | [0567-permutation-in-string](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0567-permutation-in-string) |
 | [0621-task-scheduler](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0621-task-scheduler) |
+| [0768-partition-labels](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0768-partition-labels) |
 ## Math
 |  |
 | ------- |
@@ -309,6 +312,7 @@
 |  |
 | ------- |
 | [0621-task-scheduler](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0621-task-scheduler) |
+| [0768-partition-labels](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0768-partition-labels) |
 | [2026-merge-triplets-to-form-target-triplet](https://github.com/AanshKot/Leetcode-Solutions/tree/master/2026-merge-triplets-to-form-target-triplet) |
 ## Counting
 |  |
