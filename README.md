@@ -32,6 +32,7 @@
 | [0621-task-scheduler](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0621-task-scheduler) |
 | [0695-max-area-of-island](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0695-max-area-of-island) |
 | [0747-min-cost-climbing-stairs](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0747-min-cost-climbing-stairs) |
+| [0907-koko-eating-bananas](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0907-koko-eating-bananas) |
 | [1014-k-closest-points-to-origin](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1014-k-closest-points-to-origin) |
 | [1036-rotting-oranges](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1036-rotting-oranges) |
 | [1127-last-stone-weight](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1127-last-stone-weight) |
@@ -178,6 +179,7 @@
 | [0074-search-a-2d-matrix](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0074-search-a-2d-matrix) |
 | [0287-find-the-duplicate-number](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0287-find-the-duplicate-number) |
 | [0300-longest-increasing-subsequence](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0300-longest-increasing-subsequence) |
+| [0907-koko-eating-bananas](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0907-koko-eating-bananas) |
 ## Sliding Window
 |  |
 | ------- |
