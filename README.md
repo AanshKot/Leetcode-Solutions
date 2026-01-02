@@ -69,6 +69,7 @@
 | [0567-permutation-in-string](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0567-permutation-in-string) |
 | [0647-palindromic-substrings](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0647-palindromic-substrings) |
 | [0768-partition-labels](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0768-partition-labels) |
+| [1023-time-based-key-value-store](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1023-time-based-key-value-store) |
 | [1250-longest-common-subsequence](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1250-longest-common-subsequence) |
 ## Depth-First Search
 |  |
@@ -167,6 +168,7 @@
 | [0567-permutation-in-string](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0567-permutation-in-string) |
 | [0621-task-scheduler](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0621-task-scheduler) |
 | [0768-partition-labels](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0768-partition-labels) |
+| [1023-time-based-key-value-store](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1023-time-based-key-value-store) |
 ## Math
 |  |
 | ------- |
@@ -182,6 +184,7 @@
 | [0287-find-the-duplicate-number](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0287-find-the-duplicate-number) |
 | [0300-longest-increasing-subsequence](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0300-longest-increasing-subsequence) |
 | [0907-koko-eating-bananas](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0907-koko-eating-bananas) |
+| [1023-time-based-key-value-store](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1023-time-based-key-value-store) |
 ## Sliding Window
 |  |
 | ------- |
@@ -287,6 +290,7 @@
 | ------- |
 | [0355-design-twitter](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0355-design-twitter) |
 | [0789-kth-largest-element-in-a-stream](https://github.com/AanshKot/Leetcode-Solutions/tree/master/0789-kth-largest-element-in-a-stream) |
+| [1023-time-based-key-value-store](https://github.com/AanshKot/Leetcode-Solutions/tree/master/1023-time-based-key-value-store) |
 ## Heap (Priority Queue)
 |  |
 | ------- |
