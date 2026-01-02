@@ -25,14 +25,15 @@ class TimeMap:
         #when retrieving values by latest timestamp passed to `get`, need to binary search tuples since we know that all timestamps passed into `set` will be in increasing order
         # the array of tuples will be guaranteed to be in ascending order based on timestamp
         while low <= high:
-            mid = (low + high) // 2 # mid = 0
+            mid = (low + high) // 2
 
             value, prevTimestamp = tupleList[mid][0], tupleList[mid][1]
 
             if prevTimestamp > timestamp:
                 high = mid - 1
-            # prevTimestamp <= timestamp, we can use low as our resulting index of our tuple in the tupleList
+        
             else:
+                # mid will store the latest possible timestamp
                 latestIndex = max(latestIndex, mid)
                 low = mid + 1
         
