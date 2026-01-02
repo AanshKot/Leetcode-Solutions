@@ -34,7 +34,7 @@ class TimeMap:
         
             else:
                 # mid will store the latest  prevTimestamp that is less than provided timestamp
-                latestIndex = max(latestIndex, mid)
+                latestIndex = mid
                 low = mid + 1
         
         if(latestIndex < 0):
