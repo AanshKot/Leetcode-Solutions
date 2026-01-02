@@ -33,7 +33,7 @@ class TimeMap:
                 high = mid - 1
         
             else:
-                # mid will store the latest possible timestamp
+                # mid will store the latest  prevTimestamp that is less than provided timestamp
                 latestIndex = max(latestIndex, mid)
                 low = mid + 1
         
