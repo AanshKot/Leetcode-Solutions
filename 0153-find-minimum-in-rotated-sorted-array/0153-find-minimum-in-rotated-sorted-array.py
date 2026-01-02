@@ -14,10 +14,12 @@ class Solution:
             
 
             mid = (low + high) // 2
+            #midpoint itself could be the minimum
             res = min(res, nums[mid])
 
             #if nums[mid] greater than or equal to nums[low], this means this subarray is sorted, move low to the end of the subarray
             # mid can equal to low in this case: [2, 1]
+            # we have already checked if the subarray from low -> high is sorted, and it isn't, this means the midpoint is still maintaining the ascending order subarray 
             if nums[mid] >= nums[low]:
                 low = mid + 1
             #otherwise nums[mid] <= nums[low] in this case the minimum/inflection point is somewhere between low and mid, reduce high
