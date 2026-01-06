@@ -1,15 +1,11 @@
 class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
-        if not s:
-            return 0
-                    
+    def lengthOfLongestSubstring(self, s: str) -> int:                    
         seen = set()
 
-        l,r = 0, 1
-        maxRes = 1
-        #initialize window with l
-        seen.add(s[l])
-        while r <= len(s) - 1:
+        l = 0
+        maxRes = 0
+        
+        for r in range(len(s)):
             while (s[r] in seen):
                 seen.remove(s[l])
                 l += 1
