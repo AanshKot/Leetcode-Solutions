@@ -1,41 +1,47 @@
-class Solution(object):
-    def checkInclusion(self, s1, s2):
-        """
-        :type s1: str
-        :type s2: str
-        :rtype: bool
-        """
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        if len(s1) > len(s2):
+            return False
         
-        #1. create freq map for s1
         freqMap = {}
-        for i in s1:
-            freqMap[i] = 1 + freqMap.get(i,0)
-        
 
-        #when is the window valid?
-        #the window/substring is valid when its the length of s1? r - l + 1 == len(s1)
+        for i in s1:
+            freq = freqMap.get(i,0)
+            freqMap[i] = freq + 1
         
-        #what to do when window is invalid?
-        #decrement the left pointer's character freq (delete it if no more occurences) move the left pointer to the right by 1
+        #now keep iterating r until (r-l) + 1 window size == len(s1)
 
         l = 0
-
-        #freqMap for substring to compare to the original freqMap (just like anagrams)
         freqMap2 = {}
-        for r in range(len(s2)):
-            freqMap2[s2[r]] = 1 +  freqMap2.get(s2[r],0)
 
-            while r - l + 1 > len(s1):
-                freqMap2[s2[l]] = freqMap2.get(s2[l]) - 1
-                
-                if(freqMap2[s2[l]] == 0): #if there are no more occurences of the character after moving the left pointer delete it
+        for r in range(len(s2)):
+            freq = freqMap2.get(s2[r], 0)
+            freqMap2[s2[r]] = freq + 1
+            
+            if (r - l + 1) < len(s1):
+                continue
+            
+            elif (r - l + 1) == len(s1):
+                # if char in window doesn't match freq or char in window doesn't exist in freqMap of s1
+                # iterate the left pointer read out the exiting char from the freqMap2 
+                if freqMap2 == freqMap:
+                    return True
+
+                freqMap2[s2[l]] = freqMap2[s2[l]] - 1
+                if freqMap2[s2[l]] == 0:
                     del freqMap2[s2[l]]
 
-                l += 1
+                l += 1 #reduce length of sliding window
 
-            if freqMap2 == freqMap: 
-                return True
-
+        #reached end of string without finding a possible permutation
         return False
+                
 
 
+                    
+
+
+              
+
+
+        
