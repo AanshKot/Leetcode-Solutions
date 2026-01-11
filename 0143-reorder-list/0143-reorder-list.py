@@ -1,48 +1,45 @@
 # Definition for singly-linked list.
-# class ListNode(object):
+# class ListNode:
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-class Solution(object):
-    def reorderList(self, head):
+class Solution:
+    def reorderList(self, head: Optional[ListNode]) -> None:
         """
-        :type head: Optional[ListNode]
-        :rtype: None Do not return anything, modify head in-place instead.
+        Do not return anything, modify head in-place instead.
         """
+        if not head or not head.next:
+            return
         
+        # 1. Find the middle
         slow = head
-        fast = head
-
-        while fast.next and fast.next.next:
-            fast = fast.next.next
+        fast = head.next
+        while fast and fast.next:
             slow = slow.next
+            fast = fast.next.next
 
-        #slow is at the midpoint
-        temp = slow.next
-        slow.next = None
-        reversedList = self.reverseList(temp)
+        # 2. Reverse second half
+        second = self.reverseLinkedList(slow.next)
+        slow.next = None  # split the list
 
-        listRunner = head
-        
-        while listRunner and reversedList:
-            temp = listRunner.next
-            listRunner.next = reversedList
-            listRunner = listRunner.next
-            reversedList = reversedList.next
-            listRunner.next = temp
-            listRunner = listRunner.next
+        # 3. Merge two halves
+        first = head
+        while first and second:
+            temp1 = first.next
+            temp2 = second.next
 
-        return head
+            first.next = second
+            second.next = temp1
 
-    def reverseList(self, head):
-        listRunner = head
+            first = temp1
+            second = temp2
 
-        left = None
-
-        while listRunner:
-            temp = listRunner.next
-            listRunner.next = left
-            left = listRunner
-            listRunner = temp
-        
-        return left
+    def reverseLinkedList(self, head):
+        prev = None
+        curr = head
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+        return prev
