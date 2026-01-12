@@ -1,27 +1,29 @@
 # Definition for singly-linked list.
-# class ListNode(object):
+# class ListNode:
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-class Solution(object):
-    def removeNthFromEnd(self, head, n):
-        """
-        :type head: Optional[ListNode]
-        :type n: int
-        :rtype: Optional[ListNode]
-        """
-        dummy = ListNode(0, head)
-        slow = dummy
-        fast = head
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        reversedLinkedList = self.reverseLinkedList(head)
+        if n == 1:
+            reversedLinkedList = reversedLinkedList.next
+        else:
+            prev = reversedLinkedList
+            for _ in range(n - 2):
+                prev = prev.next
 
-        for _ in range(n):
-            fast = fast.next
-        
-        while fast:
-            fast = fast.next
-            slow =  slow.next
-        
-        
-        slow.next = slow.next.next
+            prev.next = prev.next.next
 
-        return dummy.next
+        return self.reverseLinkedList(reversedLinkedList)
+
+    def reverseLinkedList(self, head):
+        runner = head
+        left = None
+        
+        while runner:
+            temp = runner.next
+            runner.next = left
+            left = runner
+            runner = temp
+        return left
