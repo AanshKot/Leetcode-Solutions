@@ -1,46 +1,37 @@
 """
 # Definition for a Node.
 class Node:
-    def __init__(self, x, next=None, random=None):
+    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
         self.val = int(x)
         self.next = next
         self.random = random
 """
 
-class Solution(object):
-    def copyRandomList(self, head):
-        """
-        :type head: Node
-        :rtype: Node
-        """
-
-        oldToCopy = {None:None}
-
-        cur = head
-
-        #first pass 
-        while cur:
-            #1. create the copied node
-            copy = Node(cur.val)
-
-            #2. map the cur node to the copy
-            oldToCopy[cur] = copy
-
-            #3. iterate current
-            cur = cur.next
-
-        #second pass, connect the nodes
-        listRunner = head
-        while listRunner:
-            #get the copied node
-            copy = oldToCopy[listRunner]
-
-            #set the next pointer to the next node
-                #how do we do this? we check the hashmap for key listRunner.next as the value has the copied node
-            copy.next = oldToCopy[listRunner.next]
-            copy.random = oldToCopy[listRunner.random]
-
-            listRunner = listRunner.next
+class Solution:
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        if not head:
+            return None
+        originalToCopy = {}
         
-        return oldToCopy[head]
+        runner = head
+        while runner:
+            copy = Node(runner.val)
+            originalToCopy[runner] = copy
+            runner = runner.next
 
+        runner2 = head
+        while runner2:
+            copy = originalToCopy[runner2]
+            if runner2.next:
+                copy.next = originalToCopy[runner2.next]
+            else:
+                copy.next = None
+
+            if runner2.random:
+                copy.random = originalToCopy[runner2.random]
+            else:
+                copy.random = None
+
+            runner2 = runner2.next
+
+        return originalToCopy[head]
