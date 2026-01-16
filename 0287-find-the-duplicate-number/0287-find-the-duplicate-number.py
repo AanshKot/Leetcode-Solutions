@@ -1,27 +1,20 @@
-class Solution(object):
-    def findDuplicate(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        #start at 0, 0 is never going to be part of the cycle
-        slow, fast = 0, 0
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        slow, fast = 0,0
 
         while True:
-            #slow, fast always going to be in bounds
             slow = nums[slow]
-            fast = nums[nums[fast]] #advance fast by two
+            fast = nums[nums[fast]]
 
-            #when slow and fast intersect
             if slow == fast:
                 break
         
-        #start point to beginning of cycle, advance point to original point where slow and fast intersect (slow)
-        slow2 = 0
+        runner = 0
+
         while True:
             slow = nums[slow]
-            slow2 = nums[slow2]
+            runner = nums[runner]
 
-            if slow == slow2:
+            if slow == runner:
                 return slow
-           
+                
