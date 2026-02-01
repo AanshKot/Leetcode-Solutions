@@ -8,18 +8,21 @@ class Solution:
     def goodNodes(self, root: TreeNode) -> int:
         res = [0]
 
-        def dfs(root, curMax):
-            if not root: 
-                return 0
+        if not root:
+            return res[0]
 
-            #if the root's value is greater than the curMax update the result
-            if root.val >= curMax:
-                res[0] += 1
-                curMax = root.val
+        
+        def dfs(root, pathMax):
+            if root:
+                if root.val >= pathMax:
+                    res[0] = res[0] + 1
+                
+                dfs(root.left, max(root.val, pathMax))
+                dfs(root.right, max(root.val, pathMax))
 
-            #pre order traversal
-            dfs(root.left, curMax)
-            dfs(root.right, curMax)
+                return
+
+            return
 
         dfs(root, root.val)
         return res[0]
