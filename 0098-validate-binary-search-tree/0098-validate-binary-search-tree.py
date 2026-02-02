@@ -6,26 +6,25 @@
 #         self.right = right
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        # for left side DFS maintain curMin if any value in the left side dfs exceeds the m in
+        #for each traversal maintain curMin, curMax (initially equal to value at rootNode)
         
+        # if any rightTree traversal falls below curMin return False
+        # set new curMax if the right node exceeds curMax
 
-        # the current root, the aboveVal, isLeft bool
-        def dfs(node, leftBound, rightBound):
-            if not node:
-                return True
-            
-            #if the current node violates the left and right bounds set recursively by the parent
-            # then we know the BST isn't valid
-            if not (node.val < rightBound and node.val > leftBound):
-                return False
+        # if any leftTree traversal exceeds curMax return False
+        # if falls below curMin set new curMin
 
-            # every node in the left subtree has to be less than the parent
-            # parent is set to the right boundary
-            leftSub = dfs(node.left, leftBound, node.val)
+        
+        def dfs(root, curMin, curMax):
+            if root:
+                if(curMin < root.val < curMax):
+                    leftSubtree = dfs(root.left, curMin, root.val)
+                    rightSubtree = dfs(root.right, root.val, curMax)
+                    return leftSubtree and rightSubtree
+                else: 
+                    return False
 
-            #every value in the right subtree has to be greater than the parent
-            rightSub = dfs(node.right, node.val, rightBound)
+            return True
 
-            return leftSub and rightSub
-
-        #no restrictions on what the root value can be (i.e no bounds on the root value)
         return dfs(root, float('-inf'), float('inf'))
