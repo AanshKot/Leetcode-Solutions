@@ -1,12 +1,10 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        if n == 0:
-            return 0
-
         mappedClimbWays = {}
 
         def topDown(n):
             # base case if num steps equal to 1
+            #if 0 stairs exactly 1 way to reach top, take no steps
             if n <= 1:
                 return 1
 
