@@ -1,22 +1,22 @@
 class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
-        # have an additional 0 at the end just to make math work out
+        memo = [-1] * len(cost)
 
-        cost.append(0)
+        def dfs(i):
+            #end of steps no cost to traverse
+            if i >= len(cost):
+                return 0
 
-        #bottom up solution
-        #iterate through array in reverse order
-        #not going to be changing (technical last value in cost index)
-        # start at second last index
-        # remember have appended 0 to the cost array to represent the out of bounds cost
-        for i in range(len(cost) - 3, -1, -1):
-            #first choice if we make a single jump
-            # second choice if we make a double jump
-            cost[i] = min(cost[i] + cost[i + 1], cost[i] + cost[i + 2])
+            if memo[i] != -1:
+                return memo[i]
+
+            #can choose to take either 1 or two steps forward
+            res = cost[i] + min(dfs(i+1), dfs(i+2))
+            memo[i] = res
+            return res
         
-        # guaranteed cost array has atleast 2 values
-        return min(cost[0], cost[1])
-
+        #can start at either first or second step
+        return min(dfs(0), dfs(1))
 
 
         
