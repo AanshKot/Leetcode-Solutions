@@ -1,13 +1,21 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        rob1, rob2 = 0, 0
+        memo = {}
 
-        for n in nums:
-            temp = max(n + rob1, rob2)
-            rob1 = rob2
-            rob2 = temp
-        return rob2
+   
+        def traverseStreet(i):
+            if i >= len(nums):
+                return 0
+            
+            if i in memo:
+                return memo[i]
+
+            #at current index can choose to rob house or skip
+            maxRob = max(nums[i] + traverseStreet(i+2), traverseStreet(i+1))
+            memo[i] = maxRob
+            return maxRob
         
+        return traverseStreet(0)
 
             
             
