@@ -1,29 +1,43 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        res = ''
-        resLen = 0
+        start = 0
+        maxLen = 0
+
+        def expand(left, right):
+
+            while (
+                left >= 0 and
+                right < len(s) and
+                s[left] == s[right]
+            ):
+                left -= 1
+                right += 1
+
+            return left + 1, right - 1
 
         for i in range(len(s)):
-            # first check odd length palindromes
-            l,r = i,i # if odd palindrome both pointers start at center
-            # while l and r are in bounds
-            while l >= 0 and r < len(s) and s[l] == s[r]:
-                if (r - l + 1) > resLen:
-                    res = s[l:r+1]
-                    resLen = r - l + 1
 
-                l -= 1
-                r += 1
-            
-            # even length palindromes
-            l, r = i, i + 1 #if even palindrome both pointers start center
-            while l >= 0 and r < len(s) and s[l] == s[r]:
-                if (r - l + 1) > resLen:
-                    res = s[l:r+1]
-                    resLen = r - l + 1
-                l -=1 
-                r += 1
-        return res
+            # odd length palindrome
+            left1, right1 = expand(i, i)
+
+            if right1 - left1 + 1 > maxLen:
+                start = left1
+                maxLen = right1 - left1 + 1
+
+            # even length palindrome
+            left2, right2 = expand(i, i + 1)
+
+            if right2 - left2 + 1 > maxLen:
+                start = left2
+                maxLen = right2 - left2 + 1
+
+        return s[start:start + maxLen]
+
+        
+
+
+
+
                 
 
         
